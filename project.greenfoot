@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Aug 12 21:17:53 PDT 2019
+#Fri Aug 23 10:11:13 PDT 2019
 target24.type=ClassTarget
 target16.name=MatthewAdrian
 target13.editor.width=900
@@ -314,6 +314,7 @@ target5.y=10
 target5.x=180
 target10.name=NehaHarpanhalli
 dependency25.from=Classroom
+class.JackLeValley.superclass=Student
 readme.editor.height=700
 readme.editor.y=23
 target5.editor.height=700
