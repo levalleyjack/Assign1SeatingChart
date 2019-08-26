@@ -26,7 +26,7 @@ public class JackLeValley extends Student implements SpecialInterestOrHobby
         lastName=l;
         myRow=r;
         mySeat=s;
-        portraitFile=f.toLowerCase()+l.toLowerCase()+".jpg";    // Make sure to name your image files firstlast.jpg, all lowercase!!!
+        portraitFile=f.toLowerCase()+l.toLowerCase()+".JPG";    // Make sure to name your image files firstlast.jpg, all lowercase!!!
         standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";
         soundFile=f.toLowerCase()+l.toLowerCase()+".wav";  // Make sure to name your sound files firstlast.wav, all lowercase!!!
         setImage(portraitFile);
@@ -40,8 +40,8 @@ public class JackLeValley extends Student implements SpecialInterestOrHobby
     public JackLeValley() {
         firstName="Jack";
         lastName="LeValley";
-        myRow=1;
-        mySeat=1;
+        myRow=3;
+        mySeat=5;
        // imgFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
        portraitFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
        standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";
