@@ -65,7 +65,7 @@ public class JackLeValley extends Student implements SpecialInterestOrHobby
                 getName();
                 sayName(soundFile);
             
-                myHobby("I like to time travel!");
+                myHobby("I will shred this universe down it's last atom");
             // Create a "special method for your class and put the call here.  You can twirl your image, resize it, move it around, change transparancy, or a 
             // combination of all of those types of actions, or more. Make sure to save the original image if you manipulate it, so that you can put it back.
             // Call the sitDown() method to move back  to your seat
@@ -112,33 +112,26 @@ public class JackLeValley extends Student implements SpecialInterestOrHobby
      * You can write your own methods to perform your own animation for your character/avatar.
      */
     public void circleClass(){
-        setLocation(0,0);
-         Greenfoot.delay(10);
-        // move right
-        for (int i=1;i<=9;i++){
-            setLocation(i,0);
-            Greenfoot.delay(10);
+        setLocation(5,6);
+         Greenfoot.delay(100);
+         Greenfoot.playSound("gauntletsound.wav");
+         Greenfoot.delay(230);
+        if (!getWorld().getObjects(Student.class).isEmpty())
+        {
+            for (Object image : getWorld().getObjects(Student.class))
+            {
+                Greenfoot.delay(40);
+                ((Student) image).setImage("ash.jpg"); 
+                
+            }
         }
-        // move back
-        for (int i=1;i<=5;i++){
-            setLocation(9,i);
-            Greenfoot.delay(10);
-        }      
-         // move left
-        for (int i=9;i>=0;i--){
-            setLocation(i,5);
-            Greenfoot.delay(10);
-        }      
-              // move Forward
-        for (int i=5;i>=0;i--){
-            setLocation(0,i);
-            Greenfoot.delay(10);
-        }   
-           Greenfoot.delay(20);
-           returnToSeat();
+         Greenfoot.delay(100);
+         getWorld().removeObjects(getWorld().getObjects(Student.class));
+         Greenfoot.delay(100);
+         returnToSeat();
     }
      public void myHobby(String s) {
          System.out.println(s);
-}
+    }
 
 }
