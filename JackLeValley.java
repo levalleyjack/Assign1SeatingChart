@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.lang.Math;
 /**
  * The KilgoreTrout class can be used as a model for your own class that represents you and your seating location in AP CSA
  * 
@@ -70,7 +70,7 @@ public class JackLeValley extends Student implements SpecialInterestOrHobby
             // combination of all of those types of actions, or more. Make sure to save the original image if you manipulate it, so that you can put it back.
             // Call the sitDown() method to move back  to your seat
             
-                circleClass();  // Kilgore Trount's special method... Please write one of your own. You can use this, but please modify it and be creative.
+                destroyUniverse();  // Kilgore Trount's special method... Please write one of your own. You can use this, but please modify it and be creative.
             }
             else {
                 answerQuestion();
@@ -111,23 +111,45 @@ public class JackLeValley extends Student implements SpecialInterestOrHobby
      * This is a local method specific to the KilgoreTrout class used to animate the character once the image is clicked on.
      * You can write your own methods to perform your own animation for your character/avatar.
      */
-    public void circleClass(){
-        setLocation(5,6);
-         Greenfoot.delay(100);
+    public void destroyUniverse(){
+         setLocation(5,4);
+         Greenfoot.delay(80);
          Greenfoot.playSound("gauntletsound.wav");
-         Greenfoot.delay(230);
+         Greenfoot.delay(160);
+         setImage("thanosenter6.jpg");
+         Greenfoot.delay(20);
+         setImage("thanosenter5.jpg");
+         Greenfoot.delay(20);
+         setImage("thanosenter4.jpg");
+         Greenfoot.delay(20);
+         setImage("thanosenter3.jpg");
+         Greenfoot.delay(20);
+         setImage("thanosenter2.jpg");
+         Greenfoot.delay(20);
+         setImage("thanosenter1.jpg");
+         Greenfoot.delay(20);
+         getImage().setTransparency(0);
+        int[][] array = new int[10][6];
+        double multiplier = 40;
+        for (int row = 0; row < array.length; row++) {
+            for (int col = 0; col < array[row].length; col++) {
+                array[row][col] = (int)(Math.random() * multiplier);
+            }
+        }
         if (!getWorld().getObjects(Student.class).isEmpty())
         {
             for (Object image : getWorld().getObjects(Student.class))
             {
-                Greenfoot.delay(40);
+                Greenfoot.delay(array[(int)Math.random() * 10][(int)Math.random() * 6]);
                 ((Student) image).setImage("ash.jpg"); 
                 
             }
         }
-         Greenfoot.delay(100);
-         getWorld().removeObjects(getWorld().getObjects(Student.class));
-         Greenfoot.delay(100);
+         Greenfoot.delay(50);
+         setImage(standingFile);
+         GreenfootImage image = getImage();
+         image.scale(image.getWidth() - 200, image.getHeight() - 250);
+         setImage(image);
          returnToSeat();
     }
      public void myHobby(String s) {
